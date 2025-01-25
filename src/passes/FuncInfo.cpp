@@ -24,7 +24,7 @@ void FuncInfo::log() {
 
 // 有 store 操作的函数非纯函数来处理
 void FuncInfo::trivial_mark(Function *func) {
-    if (func->is_declaration() or func->get_name() == "main") {
+    if (func->is_declaration() or func->get_name() == "main") {//main函数一般为非纯函数
         is_pure[func] = false;
         return;
     }
